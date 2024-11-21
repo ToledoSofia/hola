@@ -28,4 +28,4 @@ jobs:
 
       # Paso 4: Ejecutar pruebas
       - name: Run Tests
-        run: npm run test -- --watch=false --browsers=ChromeHeadless
+        run: ng test -- --watch=false --browsers=ChromeHeadless
