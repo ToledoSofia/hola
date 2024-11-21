@@ -54,7 +54,7 @@ jobs:
       # Paso 3: Construir la imagen Docker
       - name: Build Docker image
         run: |
-          docker build -t ghcr.io/${{ github.repository }}/my-app:${{ github.ref_name }} .
+          docker build -t ghcr.io/${{ github.repository }}/hola:${{ github.ref_name }} .
 
       # Paso 4: Subir la imagen a GitHub Packages
       - name: Push Docker image
