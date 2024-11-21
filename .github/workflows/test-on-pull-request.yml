@@ -45,13 +45,15 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
+      # Paso para autenticar en el GitHub Container Registry
       - name: Log in to GitHub Container Registry
         uses: docker/login-action@v2
         with:
           registry: ghcr.io
-          username: "toledosofia"
-          password: "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"
+          username: ${{ secrets.GITHUB_ACTOR }}  # Usa el actor de GitHub automáticamente
+          password: "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"        # Usa el token de acceso personal desde los secretos
 
+      # Paso para construir y subir la imagen Docker
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
@@ -59,6 +61,7 @@ jobs:
           push: true
           tags: ghcr.io/toledosofia/hola:${{ github.ref_name }}
 
+      # Paso para postear el estatus del build en la PR
       - name: Post build status to PR
         if: ${{ github.event_name == 'pull_request' }}
         uses: actions/github-script@v6
