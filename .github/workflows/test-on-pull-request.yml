@@ -54,13 +54,27 @@ jobs:
       - name: Build Docker image
         run: |
           BRANCH_NAME=${{ github.ref_name }}  # Obtener el nombre de la rama o tag
+          
           # Reemplazar las barras '/' por guiones '-'
           BRANCH_NAME=$(echo $BRANCH_NAME | tr '/' '-')
+          
           # Convertir el nombre del repositorio y el nombre de la rama a minúsculas
           REPO_NAME=$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]')
           BRANCH_NAME=$(echo $BRANCH_NAME | tr '[:upper:]' '[:lower:]')
+
+          # Validar que BRANCH_NAME no esté vacío
+          if [ -z "$BRANCH_NAME" ]; then
+            echo "Error: BRANCH_NAME is empty"
+            exit 1
+          fi
           
-          # Construir la imagen Docker con un tag válido y todo en minúsculas
+          # Verificar que el formato del tag es válido (sin caracteres no permitidos)
+          if [[ "$BRANCH_NAME" =~ [^a-z0-9-] ]]; then
+            echo "Error: Invalid characters in BRANCH_NAME"
+            exit 1
+          fi
+          
+          # Construir la imagen Docker con un tag válido
           echo "Building image with tag: ghcr.io/${REPO_NAME}/my-app:${BRANCH_NAME}"
           docker build -t ghcr.io/${REPO_NAME}/my-app:${BRANCH_NAME} .
 
