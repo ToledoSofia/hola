@@ -3,7 +3,7 @@ name: Run Tests on Pull Request
 on:
   pull_request:
     branches:
-      - Dev
+      - dev
       - QA
       - master
 
@@ -16,11 +16,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Paso 2: Configurar Node.js
+      # Paso 2: Configurar Node.js con una versión compatible
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: '18.x'  # Asegúrate de usar una versión >= 18.19
 
       # Paso 3: Instalar dependencias
       - name: Install dependencies
@@ -28,4 +28,4 @@ jobs:
 
       # Paso 4: Ejecutar pruebas
       - name: Run Tests
-        run: ng test -- --watch=false --browsers=ChromeHeadless
+        run: npm run test -- --watch=false --browsers=ChromeHeadless
