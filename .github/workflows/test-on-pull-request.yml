@@ -50,8 +50,8 @@ jobs:
         uses: docker/login-action@v2
         with:
           registry: ghcr.io
-          username: ${{ secrets.GITHUB_ACTOR }}  # Usa el actor de GitHub automáticamente
-          password: "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"        # Usa el token de acceso personal desde los secretos
+          username: ToledoSofia              # Aquí va tu nombre de usuario directamente
+          password: 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  # Aquí pasas el token directamente
 
       # Paso para construir y subir la imagen Docker
       - name: Build and push Docker image
