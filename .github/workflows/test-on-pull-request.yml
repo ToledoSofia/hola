@@ -50,7 +50,7 @@ jobs:
         with:
           registry: ghcr.io
           username: "toledosofia"
-          password: "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"
+          password: "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"
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
