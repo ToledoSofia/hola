@@ -34,9 +34,10 @@ jobs:
       # Paso 4: Ejecutar pruebas
       - name: Run Tests
         run: npm run test -- --watch=false --browsers=ChromeHeadless
+        
   docker_build_and_push:
     runs-on: ubuntu-latest
-    needs: test_and_build  # Asegura que los tests se hayan ejecuten antes de la construcción de la imagen Docker
+    needs: test # Asegura que los tests se hayan ejecuten antes de la construcción de la imagen Docker
     steps:
       # Paso 1: Clonar el repositorio
       - name: Checkout repository
