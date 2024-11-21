@@ -51,7 +51,8 @@ jobs:
 
       # Paso para autenticar en el GitHub Container Registry usando el método echo
       - name: Log in to GitHub Container Registry
-        run: echo ${{ secrets.CR_PAT }} | docker login ghcr.io -u ${{ secrets.GITHUB_ACTOR }} --password-stdin
+        run: |
+          echo ${{ secrets.CR_PAT }} | docker login ghcr.io -u ${{ secrets.GITHUB_ACTOR }} --password-stdin
 
       # Paso para construir y subir la imagen Docker
       - name: Build and push Docker image
