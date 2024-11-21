@@ -59,4 +59,4 @@ jobs:
       # Paso 4: Subir la imagen a GitHub Packages
       - name: Push Docker image
         run: |
-          docker push ghcr.io/${{ github.repository }}/my-app:${{ github.ref_name }}
+          docker push ghcr.io/${{ github.repository }}/hola:${{ github.ref_name }}
