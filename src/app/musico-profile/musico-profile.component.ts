@@ -12,9 +12,10 @@ import { ImageCropperDialogComponent } from '../image-cropper-dialog/image-cropp
 
 
 @Component({
-  selector: 'app-musico-profile',
-  templateUrl: './musico-profile.component.html',
-  styleUrl: './musico-profile.component.css'
+    selector: 'app-musico-profile',
+    templateUrl: './musico-profile.component.html',
+    styleUrl: './musico-profile.component.css',
+    standalone: false
 })
 export class MusicoProfileComponent  implements OnInit {
   musico: any;private isBrowser: boolean;

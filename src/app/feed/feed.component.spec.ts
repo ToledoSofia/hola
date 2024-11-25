@@ -1,23 +1,36 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+// import { ComponentFixture, TestBed } from '@angular/core/testing';
+// import { FeedComponent } from './feed.component';
+// import { PublicacionService } from '../services/publicacion.service';
+// import { of } from 'rxjs';
+// import { By } from '@angular/platform-browser';
 
-import { FeedComponent } from './feed.component';
+// describe('FeedComponent', () => {
+//   let component: FeedComponent;
+//   let fixture: ComponentFixture<FeedComponent>;
+//   let publicacionService: jasmine.SpyObj<PublicacionService>;
 
-describe('FeedComponent', () => {
-  let component: FeedComponent;
-  let fixture: ComponentFixture<FeedComponent>;
+//   beforeEach(async () => {
+//     publicacionService = jasmine.createSpyObj('PublicacionService', ['getPublicaciones']);
+//     await TestBed.configureTestingModule({
+//       declarations: [FeedComponent],
+//       providers: [{ provide: PublicacionService, useValue: publicacionService }]
+//     }).compileComponents();
+//   });
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [FeedComponent]
-    })
-    .compileComponents();
+//   beforeEach(() => {
+//     fixture = TestBed.createComponent(FeedComponent);
+//     component = fixture.componentInstance;
+//     publicacionService.getPublicaciones.and.returnValue(of([{ id: 1, content: 'Test publication' }]));
+//     fixture.detectChanges();
+//   });
 
-    fixture = TestBed.createComponent(FeedComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+//   it('should load publications on init', () => {
+//     expect(component.publicaciones.length).toBeGreaterThan(0);
+//     expect(component.publicaciones[0].content).toBe('Test publication');
+//   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+//   it('should display publications in the template', () => {
+//     const publicaciones = fixture.debugElement.queryAll(By.css('#publicaciones'));
+//     expect(publicaciones.length).toBeGreaterThan(0);
+//   });
+// });

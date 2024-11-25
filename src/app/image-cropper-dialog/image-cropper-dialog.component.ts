@@ -4,9 +4,10 @@ import Cropper from 'cropperjs';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-image-cropper-dialog',
-  templateUrl: './image-cropper-dialog.component.html',
-  styleUrls: ['./image-cropper-dialog.component.css']
+    selector: 'app-image-cropper-dialog',
+    templateUrl: './image-cropper-dialog.component.html',
+    styleUrls: ['./image-cropper-dialog.component.css'],
+    standalone: false
 })
 export class ImageCropperDialogComponent implements OnInit {
   imageChangedEvent: any = '';

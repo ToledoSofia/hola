@@ -2,9 +2,10 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ApiService } from '../services/api.service';
 
 @Component({
-  selector: 'app-user-cards',
-  templateUrl: './user-cards.component.html',
-  styleUrls: ['./user-cards.component.css']
+    selector: 'app-user-cards',
+    templateUrl: './user-cards.component.html',
+    styleUrls: ['./user-cards.component.css'],
+    standalone: false
 })
 export class UserCardsComponent implements OnInit {
   @Input() type: 'musicos' | 'grupos' = 'musicos'; // Default to 'musicos'

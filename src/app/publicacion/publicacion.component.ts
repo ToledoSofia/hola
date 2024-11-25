@@ -1,9 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-publicacion',
-  templateUrl: './publicacion.component.html',
-  styleUrls: ['./publicacion.component.css']
+    selector: 'app-publicacion',
+    templateUrl: './publicacion.component.html',
+    styleUrls: ['./publicacion.component.css'],
+    standalone: false
 })
 export class PublicacionComponent implements OnInit {
   @Input() publicacion: any;
